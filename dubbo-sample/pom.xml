@@ -34,6 +34,8 @@
         <dubbo.consumer.version>0.0.1-SNAPSHOT</dubbo.consumer.version>
         <sentinel.version>1.8.0</sentinel.version>
         <alibaba.nacos.vetrson>2.2.3.RELEASE</alibaba.nacos.vetrson>
+        <logback.kafka.appender.version>0.2.0-RC2</logback.kafka.appender.version>
+        <logstash.logback.encoder.version>6.4</logstash.logback.encoder.version>
     </properties>
 
     <modules>

@@ -16,3 +16,6 @@ spring:
           - dataId: sentinel-rule.yml
             group: DEV_GROUP
             refresh: false
+          - dataId: logback-logback.properties
+            group: DEV_GROUP
+            refresh: false
