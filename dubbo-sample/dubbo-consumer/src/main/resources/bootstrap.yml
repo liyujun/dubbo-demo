@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: dubbo-consumer
+  cloud:
+    nacos:
+      config:
+        prefix: ${spring.application.name}
+        server-addr: 10.20.16.44:8848
+        namespace: 1f06e506-5c4b-42e3-be2f-9a7e003e686e
+        group: DEV_GROUP
+        file-extension: properties
+        extension-configs:
+          - dataId: sentinel-config.properties
+            group: DEV_GROUP
+            refresh: false
+          - dataId: sentinel-rule.yml
+            group: DEV_GROUP
+            refresh: false
+          - dataId: logback-logback.properties
+            group: DEV_GROUP
+            refresh: false
