@@ -16,7 +16,7 @@ import org.springframework.context.annotation.ImportResource;
  * @since 2019/03/07 10:22
  */
 
-@SpringBootApplication(scanBasePackages = {"com.springcloud.dubbo.sample.consumer.controller"})
+@SpringBootApplication(scanBasePackages = {"com.springcloud.dubbo.sample.consumer.controller", "com.springcloud.dubbo.sample.consumer.sentinel"})
 @ImportResource(locations = {"classpath:application-dubbo.xml"})
 @Configuration
 public class DubboConsumerApplication {

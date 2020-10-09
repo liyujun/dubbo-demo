@@ -58,14 +58,14 @@
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
-            <version>${alibaba.nacos.vetrson}</version>
+            <version>${alibaba.cloud.vetrson}</version>
         </dependency>
 
         <!-- sentinel 熔断 -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
-            <version>${alibaba.nacos.vetrson}</version>
+            <version>${alibaba.cloud.vetrson}</version>
         </dependency>
 
         <dependency>

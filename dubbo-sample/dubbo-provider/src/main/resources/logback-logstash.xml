@@ -2,7 +2,7 @@
 <!DOCTYPE configuration>
 <configuration debug="false" scan="true" scanPeriod="15 second">
     <!--工程名若为外部读取，则需要将日志配置文件重新命名，如：logback-logstash.xml，因为logback-spring.xml是系统默认的一种命名，加载优先级高，会取不到该变量 -->
-    <springProperty scope="context" name="application.name"     source="spring.application.name"     defaultValue="sample-service"/>
+    <springProperty scope="context" name="application.name"     source="spring.application.name"     defaultValue="dubbo-service"/>
     <!-- 设置缓冲日志数，如果设置成0，日志发送是同步的，如果设置成大于0的值，会将日志放入队列，队列长度到达指定值，在统一发送, 可以加大服务吞吐量。 这个值只能配置2的N次幂（2,4,8,16...），默认8192，单位是B -->
     <springProperty scope="context" name="logback.queue.size"   source="logback.queue.size"          defaultValue="8192" />
     <!-- kafka attribute configuration -->
@@ -89,10 +89,14 @@
         <queueSize>${logback.queue.size}</queueSize>
         <neverBlock>true</neverBlock>
         <includeCallerData>true</includeCallerData>
-        <appender-ref ref="kafkaAppender" />
-        <!--
         <appender-ref ref="fileAppender" />
-        -->
+    </appender>
+
+    <appender name="asyncKafkaAppender" class="ch.qos.logback.classic.AsyncAppender">
+        <queueSize>${logback.queue.size}</queueSize>
+        <neverBlock>true</neverBlock>
+        <includeCallerData>true</includeCallerData>
+        <appender-ref ref="kafkaAppender" />
     </appender>
 
     <logger name="RocketmqClient" level="error"/>
@@ -104,5 +108,6 @@
     <root level="INFO">
         <appender-ref ref="consoleAppender" />
         <appender-ref ref="asyncFileAppender" />
+        <appender-ref ref="asyncKafkaAppender" />
     </root>
 </configuration>

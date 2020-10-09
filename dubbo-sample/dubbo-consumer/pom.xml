@@ -71,7 +71,7 @@
 
         <dependency>
             <groupId>com.alibaba.csp</groupId>
-            <artifactId>sentinel-transport-simple-http</artifactId>
+            <artifactId>sentinel-web-servlet</artifactId>
             <version>${sentinel.version}</version>
         </dependency>
         <!--sentinel end-->
